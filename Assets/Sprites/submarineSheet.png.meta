@@ -1,0 +1,1093 @@
+fileFormatVersion: 2
+guid: 3dd1e76ab506e2841824b5b52306240b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: submarineSheet
+    21300002: submarineSheet_0
+    21300004: submarineSheet_1
+    21300006: submarineSheet_2
+    21300008: submarineSheet_3
+    21300010: submarineSheet_4
+    21300012: submarineSheet_5
+    21300014: submarineSheet_6
+    21300016: submarineSheet_7
+    21300018: submarineSheet_8
+    21300020: submarineSheet_9
+    21300022: submarineSheet_10
+    21300024: submarineSheet_11
+    21300026: submarineSheet_12
+    21300028: submarineSheet_13
+    21300030: submarineSheet_14
+    21300032: submarineSheet_15
+    21300034: submarineSheet_16
+    21300036: submarineSheet_17
+    21300038: submarineSheet_18
+    21300040: submarineSheet_19
+    21300042: submarineSheet_20
+    21300044: submarineSheet_21
+    21300046: submarineSheet_22
+    21300048: submarineSheet_23
+    21300050: submarineSheet_24
+    21300052: submarineSheet_25
+    21300054: submarineSheet_26
+    21300056: submarineSheet_27
+    21300058: submarineSheet_28
+    21300060: submarineSheet_29
+    21300062: submarineSheet_30
+    21300064: submarineSheet_31
+    21300066: submarineSheet_32
+    21300068: submarineSheet_33
+    21300070: submarineSheet_34
+    21300072: submarineSheet_35
+    21300074: submarineSheet_36
+    21300076: submarineSheet_37
+    21300078: submarineSheet_38
+    21300080: submarineSheet_39
+    21300082: submarineSheet_40
+    21300084: submarineSheet_41
+    21300086: submarineSheet_42
+    21300088: submarineSheet_43
+    21300090: submarineSheet_44
+    21300092: submarineSheet_45
+    21300094: submarineSheet_46
+    21300096: submarineSheet_47
+    21300098: submarineSheet_48
+    21300100: submarineSheet_49
+    21300102: submarineSheet_50
+    21300104: submarineSheet_51
+    21300106: submarineSheet_52
+    21300108: submarineSheet_53
+    21300110: submarineSheet_54
+    21300112: submarineSheet_55
+    21300114: submarineSheet_56
+    21300116: submarineSheet_57
+    21300118: submarineSheet_58
+    21300120: submarineSheet_59
+    21300122: submarineSheet_60
+    21300124: submarineSheet_61
+    21300126: submarineSheet_62
+    21300128: submarineSheet_63
+    21300130: submarineSheet_64
+    21300132: submarineSheet_65
+    21300134: submarineSheet_66
+    21300136: submarineSheet_67
+    21300138: submarineSheet_68
+    21300140: submarineSheet_69
+    21300142: submarineSheet_70
+    21300144: submarineSheet_71
+    21300146: submarineSheet_72
+    21300148: submarineSheet_73
+    21300150: submarineSheet_74
+    21300152: submarineSheet_75
+    21300154: submarineSheet_76
+    21300156: submarineSheet_77
+    21300158: submarineSheet_78
+    21300160: submarineSheet_79
+    21300162: submarineSheet_80
+    21300164: submarineSheet_81
+    21300166: submarineSheet_82
+    21300168: submarineSheet_83
+    21300170: submarineSheet_84
+    21300172: submarineSheet_85
+    21300174: submarineSheet_86
+    21300176: submarineSheet_87
+    21300178: submarineSheet_88
+    21300180: submarineSheet_89
+    21300182: submarineSheet_90
+    21300184: submarineSheet_91
+    21300186: submarineSheet_92
+    21300188: submarineSheet_93
+    21300190: submarineSheet_94
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: submarineSheet_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 462
+        width: 93
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 462
+        width: 93
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 462
+        width: 93
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_3
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 462
+        width: 93
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_4
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 462
+        width: 93
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_5
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 462
+        width: 92
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_6
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 461
+        width: 92
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 383
+        width: 92
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 382
+        width: 93
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 378
+        width: 93
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_10
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 376
+        width: 93
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_11
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 375
+        width: 93
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_12
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 372
+        width: 93
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_13
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 364
+        width: 93
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 303
+        width: 94
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 299
+        width: 94
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_16
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 296
+        width: 94
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_17
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 296
+        width: 95
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_18
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 296
+        width: 97
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_19
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 293
+        width: 98
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_20
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 277
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_21
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 279
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 279
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_23
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 279
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_24
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 282
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_25
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 279
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_26
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 283
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_27
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 278
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_28
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 280
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_29
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 275
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_30
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 243
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_31
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 243
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_32
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 243
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_33
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 241
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_34
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 276
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_35
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 251
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_36
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 273
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_37
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 275
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_38
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 272
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_39
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 275
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_40
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 273
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_41
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 273
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_42
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 251
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_43
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 250
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_44
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 249
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_45
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 268
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_46
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 253
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_47
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 230
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_48
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 251
+        width: 37
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_49
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 252
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_50
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 252
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_51
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 270
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_52
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 252
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_53
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 270
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_54
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 195
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_55
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 195
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_56
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 195
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_57
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 198
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_58
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 228
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_59
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 197
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_60
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 225
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_61
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 194
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_62
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 218
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_63
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 192
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_64
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 217
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_65
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 222
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_66
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 217
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_67
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 220
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_68
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 209
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_69
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 198
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_70
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 210
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_71
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 197
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_72
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 210
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_73
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 207
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_74
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 209
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_75
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 194
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_76
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 195
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_77
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 144
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_78
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 168
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_79
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 165
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_80
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 163
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_81
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 168
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_82
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 167
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_83
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 156
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_84
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 157
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_85
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 89
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_86
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 88
+        width: 79
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_87
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 87
+        width: 68
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_88
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 83
+        width: 60
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_89
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 80
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_90
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 15
+        width: 65
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_91
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 12
+        width: 61
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_92
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 6
+        width: 68
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_93
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 3
+        width: 79
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submarineSheet_94
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 84
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
