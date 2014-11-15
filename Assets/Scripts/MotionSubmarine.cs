@@ -3,12 +3,14 @@ using System.Collections;
 
 public class MotionSubmarine : MonoBehaviour {
 
-	public float maxSpeed = 10f;
-	public KeyCode up, down;
+	public float maxSpeed;
+	public ArrayList torpedoes;
 
 	// Use this for initialization
 	public void Start () {
 		Debug.Log ("Initialized!");
+		maxSpeed = 5f;
+		torpedoes = new ArrayList ();
 	}
 
 	// Update is called once per frame
