@@ -20,34 +20,28 @@ public class MotionSub_L : MotionSubmarine {
 	void Update () {
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
 
-		if (Input.GetKey (KeyCode.W)) {
-			MoveUp ();
-		}
-		else if (Input.GetKey (KeyCode.S)) {
-			MoveDown ();
-		}
-		else {
-			Stop();
-		}
+		float move = Input.GetAxis ("Vertical");
 		
-		print (cooldown);
+		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
+		Rotate ();
+
 		if(cooldown == 0f) {	
 			Vector3 rotation = transform.rotation.eulerAngles;
 			rotation = new Vector3(rotation.x,rotation.y+180,rotation.z);
 
-			if(Input.GetKeyDown ( KeyCode.Alpha1)){
+			if(Input.GetKeyDown (KeyCode.Joystick1Button0)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Light, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += LightTorpedo.cooldown;
 				//adjust velocity
 			}
-			else if(Input.GetKeyDown ( KeyCode.Alpha2)){
+			else if(Input.GetKeyDown (KeyCode.Joystick1Button1)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Medium, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += MediumTorpedo.cooldown;
 				//adjust velocity
 			}
-			else if(Input.GetKeyDown ( KeyCode.Alpha3)){
+			else if(Input.GetKeyDown (KeyCode.Joystick1Button2)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Heavy, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += HeavyTorpedo.cooldown;

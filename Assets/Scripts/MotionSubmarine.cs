@@ -29,4 +29,8 @@ public class MotionSubmarine : MonoBehaviour {
 	public void Stop() {
 		rigidbody2D.velocity = new Vector2 (0f, 0f);
 	}
+
+	public void Rotate() {
+		rigidbody2D.rotation = 2f * rigidbody2D.velocity.y;
+	}
 }
