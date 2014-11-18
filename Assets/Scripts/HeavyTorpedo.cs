@@ -2,15 +2,23 @@
 using System.Collections;
 
 class HeavyTorpedo : Torpedo {
-	public static readonly float cooldown = 3f;
-	public static readonly float damage = 3f;
-	public static readonly float speed = 1f;
-	public static readonly float blastRadius = 1f;
-	public static readonly bool interceptor = false;
+	public static readonly float heavyCooldown = 3f;
+	public static readonly float heavyDamage = 3f;
+	public static readonly float heavySpeed = 1f;
+	public static readonly float heavyBlastRadius = 1f;
+	public static readonly float heavyStun = 0f;
+	public static readonly bool heavyInterceptor = false;
+	public static readonly int heavyType = SubmarineGame.HEAVY_TORPEDO;
 	
 	// Use this for initialization
 	void Start () {
-		LateStart ();
+		cooldown = heavyCooldown;
+		damage = heavyDamage;
+		speed = heavySpeed;
+		blastRadius = heavyBlastRadius;
+		stun = heavyStun;
+		interceptor = heavyInterceptor;
+		type = heavyType;
 	}
 
 	void Update () {

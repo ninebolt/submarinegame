@@ -10,8 +10,7 @@ public class MotionSub_R : MotionSubmarine {
 	
 	new void Start () {
 		Debug.Log ("Initialized!");
-		maxSpeed = 5f;
-		torpedoes = new ArrayList ();
+		maxSpeed = 5f * SubmarineGame.gameTempo;
 		offset = new Vector2 (-0.8f, 0f);
 		cooldown = 0f;
 		health = 10;
@@ -45,25 +44,38 @@ public class MotionSub_R : MotionSubmarine {
 			if(Input.GetKeyDown (KeyCode.Joystick2Button0) || Input.GetKeyDown (KeyCode.Alpha7)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Light, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
-				cooldown += LightTorpedo.cooldown;
-				torpedo.rigidbody2D.velocity = new Vector2(-LightTorpedo.speed, rigidbody2D.velocity.y);
+				cooldown += LightTorpedo.lightCooldown;
+				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
+					* new Vector2(-LightTorpedo.lightSpeed, rigidbody2D.velocity.y);
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button1) || Input.GetKeyDown ( KeyCode.Alpha8)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Medium, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
-				cooldown += MediumTorpedo.cooldown;
-				torpedo.rigidbody2D.velocity = new Vector2(-MediumTorpedo.speed, rigidbody2D.velocity.y);
+				cooldown += MediumTorpedo.mediumCooldown;
+				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
+					* new Vector2(-MediumTorpedo.mediumSpeed, rigidbody2D.velocity.y);
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button3) || Input.GetKeyDown ( KeyCode.Alpha9)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Heavy, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
-				cooldown += HeavyTorpedo.cooldown;
-				torpedo.rigidbody2D.velocity = new Vector2(-HeavyTorpedo.speed, rigidbody2D.velocity.y);
+				cooldown += HeavyTorpedo.heavyCooldown;
+				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
+					* new Vector2(-HeavyTorpedo.heavySpeed, rigidbody2D.velocity.y);
 			}
 		}
 	}
 
-	public void Rotate() {
+	new public void Rotate() {
 		rigidbody2D.rotation = -2f * rigidbody2D.velocity.y;
+	}
+
+	new void OnCollisionEnter2D (Collision2D c) {
+		Debug.Log ("Hit!");
+		
+		Torpedo s = c.gameObject.GetComponent<Torpedo>();
+		health = health - s.getDamage ();
+		Destroy (c.gameObject);
+		
+		Debug.Log ("Blue's New Health is: " + health);
 	}
 }
