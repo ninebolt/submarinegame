@@ -18,10 +18,10 @@ public class Torpedo : MonoBehaviour {
 
 	public void LateStart() {
 		if (!directionRight) {
-			rigidbody2D.velocity = new Vector2(speed, 0f);
+			//rigidbody2D.velocity = new Vector2(speed, L_Submarine.rigidbody2D.velocity.y);
 		}
 		else {
-			rigidbody2D.velocity = new Vector2(-speed, 0f);
+			//rigidbody2D.velocity = new Vector2(-speed, 0f);
 		}
 	}
 	
@@ -35,4 +35,7 @@ public class Torpedo : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
+	public int getDamage() {
+		return damage;
+	}
 }

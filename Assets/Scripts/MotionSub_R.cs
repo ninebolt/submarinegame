@@ -25,37 +25,45 @@ public class MotionSub_R : MotionSubmarine {
 		
 		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
 		Rotate ();
+
+		if(Input.GetKey (KeyCode.UpArrow)) {
+			MoveUp ();
+			Rotate ();
+		}
+		else if(Input.GetKey (KeyCode.DownArrow)) {
+			MoveDown ();
+			Rotate ();
+		}
+		else if(move == 0) {
+			Stop ();
+		}
 		
-		if(cooldown == 0f) {	
+		if(cooldown == 0f) {
+			Vector3 rotation = transform.rotation.eulerAngles;
+			rotation = new Vector3(rotation.x,rotation.y,rotation.z);
+
 			if(Input.GetKeyDown (KeyCode.Joystick2Button0) || Input.GetKeyDown (KeyCode.Alpha7)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Light, ((Vector2)transform.position) 
-			             + offset, Quaternion.identity);
+				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += LightTorpedo.cooldown;
-				//adjust velocity
+				torpedo.rigidbody2D.velocity = new Vector2(-LightTorpedo.speed, rigidbody2D.velocity.y);
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button1) || Input.GetKeyDown ( KeyCode.Alpha8)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Medium, ((Vector2)transform.position) 
-				                                            + offset, Quaternion.identity);
+				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += MediumTorpedo.cooldown;
-				//adjust velocity
+				torpedo.rigidbody2D.velocity = new Vector2(-MediumTorpedo.speed, rigidbody2D.velocity.y);
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button3) || Input.GetKeyDown ( KeyCode.Alpha9)){
 				Transform torpedo = (Transform)Instantiate (torpedo_R_Heavy, ((Vector2)transform.position) 
-				                                            + offset, Quaternion.identity);
+				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += HeavyTorpedo.cooldown;
-				//adjust velocity
+				torpedo.rigidbody2D.velocity = new Vector2(-HeavyTorpedo.speed, rigidbody2D.velocity.y);
 			}
 		}
-	}	
+	}
 
-	void OnCollisionEnter2D (Collision2D c) {
-		Debug.Log ("Hit!");
-		
-		Destroy (c.gameObject);
-		
-		LightTorpedo s = c.gameObject.GetComponent<LightTorpedo>();
-		
-		health = health - s.damage;
-		Debug.Log ("New Health is: " + health);
+	public void Rotate() {
+		rigidbody2D.rotation = -2f * rigidbody2D.velocity.y;
 	}
 }

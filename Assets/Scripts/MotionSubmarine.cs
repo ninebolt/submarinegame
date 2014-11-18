@@ -36,5 +36,13 @@ public class MotionSubmarine : MonoBehaviour {
 		rigidbody2D.rotation = 2f * rigidbody2D.velocity.y;
 	}
 
+	void OnCollisionEnter2D (Collision2D c) {
+		Debug.Log ("Hit!");
 
+		Torpedo s = c.gameObject.GetComponent<Torpedo>();
+		health = health - s.getDamage ();
+		Destroy (c.gameObject);
+
+		Debug.Log ("New Health is: " + health);
+	}
 }
