@@ -12,7 +12,7 @@ public class MotionSubmarineBackup : MonoBehaviour {
 	
 	// Use this for initialization
 	public void Start () {
-		Debug.Log ("Initialized!");
+		//Debug.Log ("Initialized!");
 		rightSubmarine = GameObject.Find ("Submarine_R");
 		leftSubmarine = GameObject.Find ("Submarine_L");
 	}

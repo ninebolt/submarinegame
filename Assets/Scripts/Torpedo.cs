@@ -17,7 +17,7 @@ public class Torpedo : MonoBehaviour {
 	}
 
 	public void LateStart() {
-		if (directionRight) {
+		if (!directionRight) {
 			rigidbody2D.velocity = new Vector2(speed, 0f);
 		}
 		else {
@@ -29,4 +29,10 @@ public class Torpedo : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnTriggerExit2D (Collider2D c) {
+		Debug.Log ("Woosh!");
+		Destroy (gameObject);
+	}
+
 }

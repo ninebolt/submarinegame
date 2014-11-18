@@ -6,9 +6,11 @@ public class MotionSubmarine : MonoBehaviour {
 	public float maxSpeed;
 	public ArrayList torpedoes;
 
+	public int health;
+
 	// Use this for initialization
 	public void Start () {
-		Debug.Log ("Initialized!");
+		//Debug.Log ("Initialized!");
 		maxSpeed = 5f;
 		torpedoes = new ArrayList ();
 	}
@@ -33,4 +35,6 @@ public class MotionSubmarine : MonoBehaviour {
 	public void Rotate() {
 		rigidbody2D.rotation = 2f * rigidbody2D.velocity.y;
 	}
+
+
 }
