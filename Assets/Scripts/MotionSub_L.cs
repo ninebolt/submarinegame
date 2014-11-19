@@ -20,6 +20,8 @@ public class MotionSub_L : MotionSubmarine {
 	void Update () {
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
 
+		healthUpdate ();
+
 		float move = Input.GetAxis ("VerticalAxis_1");
 		
 		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
@@ -46,27 +48,26 @@ public class MotionSub_L : MotionSubmarine {
 				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += LightTorpedo.lightCooldown;
 				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-					* new Vector2(LightTorpedo.lightSpeed, rigidbody2D.velocity.y);
+					* new Vector2(LightTorpedo.lightSpeed, rigidbody2D.velocity.y * 0.25f);
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.Alpha2)){
 				Transform torpedo = (Transform)Instantiate (torpedo_L_Medium, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += MediumTorpedo.mediumCooldown;
 				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-					* new Vector2(MediumTorpedo.mediumSpeed, rigidbody2D.velocity.y);
+					* new Vector2(MediumTorpedo.mediumSpeed, rigidbody2D.velocity.y * 0.25f);
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick1Button3) || Input.GetKeyDown (KeyCode.Alpha3)){
 				Transform torpedo = (Transform)Instantiate (torpedo_L_Heavy, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
 				cooldown += HeavyTorpedo.heavyCooldown;
 				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-					* new Vector2(HeavyTorpedo.heavySpeed, rigidbody2D.velocity.y);
+					* new Vector2(HeavyTorpedo.heavySpeed, rigidbody2D.velocity.y * 0.25f);
 			}
 		}
 	}
 
 	new void OnCollisionEnter2D (Collision2D c) {
-		Debug.Log ("Hit!");
 		
 		Torpedo s = c.gameObject.GetComponent<Torpedo>();
 		health = health - s.getDamage ();

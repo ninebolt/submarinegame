@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Torpedo : MonoBehaviour {
@@ -10,6 +10,7 @@ public class Torpedo : MonoBehaviour {
 	public bool interceptor;
 	public int type;
 	public bool directionRight;
+	public GUIText healthGUI;
 
 	// Use this for initialization
 	void Start () {
@@ -21,12 +22,12 @@ public class Torpedo : MonoBehaviour {
 		
 	}
 
-	void OnTriggerExit2D (Collider2D c) {
-		Debug.Log ("Woosh!");
+	public float getDamage () {
+		return damage;
+	}
+
+	public void OnTriggerExit2D (Collider2D c)  {
 		Destroy (gameObject);
 	}
 
-	public float getDamage() {
-		return damage;
-	}
 }

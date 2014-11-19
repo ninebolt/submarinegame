@@ -6,6 +6,8 @@ public class MotionSubmarine : MonoBehaviour {
 	public float maxSpeed;
 	public float health;
 
+	public GUIText healthGUI;
+
 	// Use this for initialization
 	public void Start () {
 		//Debug.Log ("Initialized!");
@@ -37,12 +39,23 @@ public class MotionSubmarine : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D c) {
-		Debug.Log ("Hit!");
-
 		Torpedo s = c.gameObject.GetComponent<Torpedo>();
 		health = health - s.getDamage ();
 		Destroy (c.gameObject);
 
 		Debug.Log ("New Health is: " + health);
+	}
+
+	public void healthUpdate () {
+		if (health <= 0) {
+			healthGUI.text = "You lose!";
+			healthGUI.material.color = Color.white;
+		} else {
+			healthGUI.text = health.ToString ();
+			
+			if (health <= 4) {
+				healthGUI.material.color = Color.red;
+			}
+		}
 	}
 }

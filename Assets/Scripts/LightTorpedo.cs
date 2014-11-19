@@ -2,7 +2,7 @@
 using System.Collections;
 
 class LightTorpedo : Torpedo {
-	public static readonly float lightCooldown = 1f;
+	public static readonly float lightCooldown = 0.25f;
 	public static readonly float lightDamage = 1f;
 	public static readonly float lightSpeed = 3f;
 	public static readonly float lightBlastRadius = 1f;

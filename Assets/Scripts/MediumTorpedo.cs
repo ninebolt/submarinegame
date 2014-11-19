@@ -2,7 +2,7 @@
 using System.Collections;
 
 class MediumTorpedo : Torpedo {
-	public static readonly float mediumCooldown = 2f;
+	public static readonly float mediumCooldown = 0.5f;
 	public static readonly float mediumDamage = 2f;
 	public static readonly float mediumSpeed = 2f;
 	public static readonly float mediumBlastRadius = 1f;
