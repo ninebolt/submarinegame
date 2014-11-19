@@ -39,8 +39,8 @@ public class MotionSubmarine : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D c) {
-		Torpedo s = c.gameObject.GetComponent<Torpedo>();
-		health = health - s.getDamage ();
+		//Torpedo s = c.gameObject.GetComponent<Torpedo>();
+		health = health - c.gameObject.GetComponent<Torpedo>().getDamage ();
 		Destroy (c.gameObject);
 
 		Debug.Log ("New Health is: " + health);
