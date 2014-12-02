@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MotionSubmarine : MonoBehaviour {
 	private static readonly float tilt = 4f;
+	public static readonly float cooldown;
+	public Vector3 orientation;
 	public float maxSpeed;
 	public float health;
 
@@ -11,7 +13,8 @@ public class MotionSubmarine : MonoBehaviour {
 	// Use this for initialization
 	public void Start () {
 		//Debug.Log ("Initialized!");
-		maxSpeed = 5f;
+		maxSpeed = 5f * SubmarineGame.gameTempo * SubmarineGame.subSpeed;
+		orientation = transform.rotation.eulerAngles;
 	}
 
 	// Update is called once per frame
@@ -20,18 +23,15 @@ public class MotionSubmarine : MonoBehaviour {
 	}
 
 	public void MoveUp() {
-		rigidbody2D.velocity = SubmarineGame.gameTempo * SubmarineGame.subSpeed 
-			* new Vector2 (rigidbody2D.velocity.x, maxSpeed);
+		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, maxSpeed);
 	}
 	
 	public void MoveDown() {
-		rigidbody2D.velocity = SubmarineGame.gameTempo * SubmarineGame.subSpeed 
-			* new Vector2 (rigidbody2D.velocity.x, -maxSpeed);
+		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -maxSpeed);
 	}
 	
 	public void Stop() {
-		rigidbody2D.velocity = SubmarineGame.gameTempo * SubmarineGame.subSpeed 
-			* new Vector2 (0f, 0f);
+		rigidbody2D.velocity = new Vector2 (0f, 0f);
 	}
 
 	public void Rotate() {
