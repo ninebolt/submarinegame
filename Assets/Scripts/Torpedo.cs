@@ -1,32 +1,33 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Torpedo : MonoBehaviour {
-	public int type;
-	public int damage;
+	public float cooldown;
+	public float damage;
 	public float speed;
 	public float blastRadius;
 	public float stun;
 	public bool interceptor;
-	public bool cleanup;
+	public int type;
 	public bool directionRight;
+	public GUIText healthGUI;
 
 	// Use this for initialization
 	void Start () {
 
-	}
-
-	public void LateStart() {
-		if (directionRight) {
-			rigidbody2D.velocity = new Vector2(speed, 0f);
-		}
-		else {
-			rigidbody2D.velocity = new Vector2(-speed, 0f);
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+	public float getDamage () {
+		return damage;
+	}
+
+	public void OnTriggerExit2D (Collider2D c)  {
+		Destroy (gameObject);
+	}
+
 }

@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class MotionSubmarine : MonoBehaviour {
-
+	private static readonly float tilt = 4f;
 	public float maxSpeed;
-	public ArrayList torpedoes;
+	public float health;
+
+	public GUIText healthGUI;
 
 	// Use this for initialization
 	public void Start () {
-		Debug.Log ("Initialized!");
+		//Debug.Log ("Initialized!");
 		maxSpeed = 5f;
-		torpedoes = new ArrayList ();
 	}
 
 	// Update is called once per frame
@@ -19,18 +20,42 @@ public class MotionSubmarine : MonoBehaviour {
 	}
 
 	public void MoveUp() {
-		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, maxSpeed);
+		rigidbody2D.velocity = SubmarineGame.gameTempo * SubmarineGame.subSpeed 
+			* new Vector2 (rigidbody2D.velocity.x, maxSpeed);
 	}
 	
 	public void MoveDown() {
-		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -maxSpeed);
+		rigidbody2D.velocity = SubmarineGame.gameTempo * SubmarineGame.subSpeed 
+			* new Vector2 (rigidbody2D.velocity.x, -maxSpeed);
 	}
 	
 	public void Stop() {
-		rigidbody2D.velocity = new Vector2 (0f, 0f);
+		rigidbody2D.velocity = SubmarineGame.gameTempo * SubmarineGame.subSpeed 
+			* new Vector2 (0f, 0f);
 	}
 
 	public void Rotate() {
-		rigidbody2D.rotation = 2f * rigidbody2D.velocity.y;
+		rigidbody2D.rotation = tilt * rigidbody2D.velocity.y;
+	}
+
+	void OnCollisionEnter2D (Collision2D c) {
+		//Torpedo s = c.gameObject.GetComponent<Torpedo>();
+		health = health - c.gameObject.GetComponent<Torpedo>().getDamage ();
+		Destroy (c.gameObject);
+
+		Debug.Log ("New Health is: " + health);
+	}
+
+	public void healthUpdate () {
+		if (health <= 0) {
+			healthGUI.text = "You lose!";
+			healthGUI.material.color = Color.white;
+		} else {
+			healthGUI.text = health.ToString ();
+			
+			if (health <= 4) {
+				healthGUI.material.color = Color.red;
+			}
+		}
 	}
 }
