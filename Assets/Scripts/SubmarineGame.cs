@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class SubmarineGame : MonoBehaviour {
-	public static readonly float gameTempo = 0.5f;
-	public static readonly float subSpeed = 1f;
-	public static readonly float torpedoSpeed = 3f;
+	public static readonly float gameTempo = 1f;
+	public static readonly float subSpeed = 0.5f;
+	public static readonly float torpedoSpeed = 1.5f;
+	public static readonly float allTorpedoCooldown = 0.1f;
 
 	public static readonly int LIGHT_TORPEDO = 0;
 	public static readonly int MEDIUM_TORPEDO = 1;

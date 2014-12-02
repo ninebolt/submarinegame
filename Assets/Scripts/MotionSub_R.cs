@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MotionSub_R : MotionSubmarine {
-	private Burst burst;
+	public Burst burst;
 	private Vector2 offset;
 	private float cooldown;
 	public Transform torpedo_R_Light;
@@ -45,28 +45,34 @@ public class MotionSub_R : MotionSubmarine {
 			rotation = new Vector3(orientation.x,orientation.y,orientation.z);
 
 			if(Input.GetKeyDown (KeyCode.Joystick2Button0) || Input.GetKeyDown (KeyCode.Alpha7)){
-				Transform torpedo = (Transform)Instantiate (torpedo_R_Light, ((Vector2)transform.position) 
+				if(burst.fireLight ()){
+					Transform torpedo = (Transform)Instantiate (torpedo_R_Light, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
-				burst.fireLight ();
-				cooldown += cooldown;
-				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-					* new Vector2(-LightTorpedo.lightSpeed, 0f);//rigidbody2D.velocity.y * 0.25f);
+					burst.fireLight ();
+					cooldown += SubmarineGame.allTorpedoCooldown;
+					torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
+						* new Vector2(-LightTorpedo.lightSpeed, 0f);//rigidbody2D.velocity.y * 0.25f);
+				}
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button1) || Input.GetKeyDown ( KeyCode.Alpha8)){
-				Transform torpedo = (Transform)Instantiate (torpedo_R_Medium, ((Vector2)transform.position) 
+				if(burst.fireMedium ()){
+					Transform torpedo = (Transform)Instantiate (torpedo_R_Medium, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
-				burst.fireMedium ();
-				cooldown += cooldown;
-				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-					* new Vector2(-MediumTorpedo.mediumSpeed, 0f);
+					burst.fireMedium ();
+					cooldown += SubmarineGame.allTorpedoCooldown;
+					torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
+						* new Vector2(-MediumTorpedo.mediumSpeed, 0f);
+				}
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button3) || Input.GetKeyDown ( KeyCode.Alpha9)){
-				Transform torpedo = (Transform)Instantiate (torpedo_R_Heavy, ((Vector2)transform.position) 
+				if(burst.fireHeavy ()){
+					Transform torpedo = (Transform)Instantiate (torpedo_R_Heavy, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
-				burst.fireHeavy ();
-				cooldown += cooldown;
-				torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-					* new Vector2(-HeavyTorpedo.heavySpeed, 0f);
+					burst.fireHeavy ();
+					cooldown += SubmarineGame.allTorpedoCooldown;
+					torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
+						* new Vector2(-HeavyTorpedo.heavySpeed, 0f);
+				}
 			}
 		}
 	}

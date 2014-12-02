@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class Burst : MonoBehaviour {
-	public static readonly int lightTorpedoCap = 6;
-	public static readonly int mediumTorpedoCap = 4;
-	public static readonly int heavyTorpedoCap = 2;
+	public static readonly int lightTorpedoCap = 5;
+	public static readonly int mediumTorpedoCap = 3;
+	public static readonly int heavyTorpedoCap = 1;
 
 	private float lightCharge;
 	private float mediumCharge;
@@ -28,9 +28,15 @@ public class Burst : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(lightTorpedoCharges < lightTorpedoCap) {
-			lightCharge += Time.deltaTime;
+			lightCharge += Time.deltaTime * SubmarineGame.gameTempo;
 			if(lightCharge >= LightTorpedo.lightCooldown) {
-
+				lightTorpedoCharges++;
+				if(lightTorpedoCharges == lightTorpedoCap) {
+					lightCharge = 0f;
+				}
+				else {
+					lightCharge -= LightTorpedo.lightCooldown;
+				}
 			}
 		}
 		else {
@@ -39,9 +45,15 @@ public class Burst : MonoBehaviour {
 		}
 
 		if(mediumTorpedoCharges < mediumTorpedoCap) {
-			mediumCharge += Time.deltaTime;
+			mediumCharge += Time.deltaTime * SubmarineGame.gameTempo;
 			if(mediumCharge >= MediumTorpedo.mediumCooldown) {
-				
+				mediumTorpedoCharges++;
+				if(mediumTorpedoCharges == mediumTorpedoCap) {
+					mediumCharge = 0f;
+				}
+				else {
+					mediumCharge -= MediumTorpedo.mediumCooldown;
+				}
 			}
 		}
 		else {
@@ -50,9 +62,15 @@ public class Burst : MonoBehaviour {
 		}
 
 		if(heavyTorpedoCharges < heavyTorpedoCap) {
-			heavyCharge += Time.deltaTime;
+			heavyCharge += Time.deltaTime * SubmarineGame.gameTempo;
 			if(heavyCharge >= HeavyTorpedo.heavyCooldown) {
-				
+				heavyTorpedoCharges++;
+				if(heavyTorpedoCharges == heavyTorpedoCap) {
+					heavyCharge = 0f;
+				}
+				else {
+					heavyCharge -= HeavyTorpedo.heavyCooldown;
+				}
 			}
 		}
 		else {
@@ -73,15 +91,36 @@ public class Burst : MonoBehaviour {
 		return heavyTorpedoCharges;
 	}
 
-	public void fireLight() {
-		lightTorpedoCharges--;
+	public bool fireLight() {
+		if(lightTorpedoCharges > 0) {
+			lightTorpedoCharges--;
+			return true;
+		}
+		else {
+			lightTorpedoCharges = 0;
+			return false;
+		}
 	}
 
-	public void fireMedium() {
-		mediumTorpedoCharges--;
+	public bool fireMedium() {
+		if(mediumTorpedoCharges > 0) {
+			mediumTorpedoCharges--;
+			return true;
+		}
+		else {
+			mediumTorpedoCharges = 0;
+			return false;
+		}
 	}
 
-	public void fireHeavy() {
-		heavyTorpedoCharges--;
+	public bool fireHeavy() {
+		if(heavyTorpedoCharges > 0) {
+			heavyTorpedoCharges--;
+			return true;
+		}
+		else {
+			heavyTorpedoCharges = 0;
+			return false;
+		}
 	}
 }
