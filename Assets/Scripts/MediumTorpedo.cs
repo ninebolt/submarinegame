@@ -9,7 +9,9 @@ class MediumTorpedo : Torpedo {
 	public static readonly float mediumStun = 2.25f;
 	public static readonly bool mediumInterceptor = false;
 	public static readonly int mediumType = SubmarineGame.MEDIUM_TORPEDO;
-	
+
+	public GameObject empSplashObj;
+
 	// Use this for initialization
 	void Start () {
 		cooldown = mediumCooldown;
@@ -32,9 +34,12 @@ class MediumTorpedo : Torpedo {
 	}
 
 	void OnDestroy () {
-
-		//Spawn Collision Box w/ Sprite from Prefab
-
+		Vector3 curLoc = this.gameObject.transform.position;
+		if (curLoc.x > 0) {
+			Instantiate (empSplashObj, new Vector3(3.487008f, curLoc.y, 0f), new Quaternion(0f, 0f, 0f, 0f));
+		} else {
+			Instantiate (empSplashObj, new Vector3(-3.487008f, curLoc.y, 0f), new Quaternion(0f, 0f, 0f, 0f));
+		}
 	}
 
 }
