@@ -94,7 +94,7 @@ public class MotionSub_R : MotionSubmarine {
 	new void healthUpdate () {
 		if (health <= 0) {
 			gameover = true;
-			announcement.text = "Red sub wins...\nPress any key to\nstart a new game";
+			announcement.text = "Red sub wins...\n\nPress enter to\nstart a new game";
 			announcement.material.color = Color.black;
 		}
 	}

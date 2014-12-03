@@ -90,7 +90,7 @@ public class MotionSub_L : MotionSubmarine {
 	new void healthUpdate () {
 		if (health <= 0) {
 		gameover = true;
-			announcement.text = "Blue sub wins!";
+			announcement.text = "Blue sub wins!\n\nPress enter to\nstart a new game";
 			announcement.material.color = Color.black;
 		}
 	}
