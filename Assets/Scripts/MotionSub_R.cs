@@ -95,10 +95,14 @@ public class MotionSub_R : MotionSubmarine {
 
 	void OnCollisionEnter2D (Collision2D c) {
 		Torpedo s = c.gameObject.GetComponent<Torpedo>();
+		takeDamage (s);
+		Destroy (c.gameObject);
+	}
+
+	public void takeDamage(Torpedo s) {
 		health = health - s.getDamage ();
 		HealthBar.AddDamage ((int)s.getDamage ());
 		hitstun = s.stun;
-		Destroy (c.gameObject);
 	}
 
 	new void healthUpdate () {

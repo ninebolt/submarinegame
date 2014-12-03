@@ -6,13 +6,13 @@ public class Burst : MonoBehaviour {
 	public static readonly int mediumTorpedoCap = 1;
 	public static readonly int heavyTorpedoCap = 1;
 
-	private float lightCharge;
-	private float mediumCharge;
-	private float heavyCharge;
-
 	private int lightTorpedoCharges;
 	private int mediumTorpedoCharges;
 	private int heavyTorpedoCharges;
+
+	private float lightCharge;
+	private float mediumCharge;
+	private float heavyCharge;
 
 	public GUIText torpedoStock, empStock, nukeStock;
 
