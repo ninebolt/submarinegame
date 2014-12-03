@@ -4,6 +4,7 @@ using System.Collections;
 public class NukeExplosion : Torpedo {
 	public static readonly float heavyDamage = 3f;
 	public static readonly float heavyStun = 0f;
+	private float lifetime = 2f;
 	
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,9 @@ public class NukeExplosion : Torpedo {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (lifetime <= 0f) {
+			Destroy (this.gameObject);
+		}
+		lifetime -= Time.deltaTime;
 	}
 }

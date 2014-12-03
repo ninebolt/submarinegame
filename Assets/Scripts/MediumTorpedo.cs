@@ -9,7 +9,6 @@ class MediumTorpedo : Torpedo {
 	public static readonly float mediumStun = 2.25f;
 	public static readonly bool mediumInterceptor = false;
 	public static readonly int mediumType = SubmarineGame.MEDIUM_TORPEDO;
-
 	public GameObject empSplashObj;
 
 	// Use this for initialization
@@ -25,12 +24,6 @@ class MediumTorpedo : Torpedo {
 
 	void Update () {
 
-		if(transform.position.x > SubmarineGame.rightWall) {
-
-		}
-		if(transform.position.x < SubmarineGame.leftWall){
-
-		}
 	}
 
 	void OnDestroy () {
