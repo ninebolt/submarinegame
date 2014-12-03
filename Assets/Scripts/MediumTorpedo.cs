@@ -23,5 +23,18 @@ class MediumTorpedo : Torpedo {
 
 	void Update () {
 
+		if(transform.position.x > SubmarineGame.rightWall) {
+
+		}
+		if(transform.position.x < SubmarineGame.leftWall){
+
+		}
 	}
+
+	void OnDestroy () {
+
+		//Spawn Collision Box w/ Sprite from Prefab
+
+	}
+
 }
