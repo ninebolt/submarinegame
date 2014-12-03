@@ -4,21 +4,24 @@ using System.Collections;
 public class MotionSub_L : MotionSubmarine {
 	public Burst burst;
 	private Vector2 offset;
-	private float cooldown;
+	new private float cooldown;
 	public Transform torpedo_L_Light;
 	public Transform torpedo_L_Medium;
 	public Transform torpedo_L_Heavy;
 	
 	new void Start () {
-		Debug.Log ("Initialized!");
 		maxSpeed = 5f * SubmarineGame.gameTempo * SubmarineGame.subSpeed;
 		offset = new Vector2 (0.8f, 0f);
 		cooldown = 0f;
-		health = 10;
+		health = SubmarineGame.maxHealth;
+		healthBarOffset = new Vector3(0f, transform.localScale.y * 1.5f, 0f);
+		gameover = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		HealthBar.transform.position = transform.position + healthBarOffset;
+
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
 
 		healthUpdate ();
@@ -77,12 +80,18 @@ public class MotionSub_L : MotionSubmarine {
 		}
 	}
 
-	new void OnCollisionEnter2D (Collision2D c) {
-		
+	void OnCollisionEnter2D (Collision2D c) {
 		Torpedo s = c.gameObject.GetComponent<Torpedo>();
 		health = health - s.getDamage ();
+		HealthBar.AddDamage ((int)s.getDamage ());
 		Destroy (c.gameObject);
-		
-		Debug.Log ("Red's New Health is: " + health);
+	}
+
+	new void healthUpdate () {
+		if (health <= 0) {
+		gameover = true;
+			announcement.text = "Blue sub wins!";
+			announcement.material.color = Color.black;
+		}
 	}
 }

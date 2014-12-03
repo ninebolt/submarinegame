@@ -4,28 +4,31 @@ using System.Collections;
 public class MotionSub_R : MotionSubmarine {
 	public Burst burst;
 	private Vector2 offset;
-	private float cooldown;
+	new private float cooldown;
 	public Transform torpedo_R_Light;
 	public Transform torpedo_R_Medium;
 	public Transform torpedo_R_Heavy;
 	
 	new void Start () {
-		Debug.Log ("Initialized!");
 		maxSpeed = 5f * SubmarineGame.gameTempo * SubmarineGame.subSpeed;
 		offset = new Vector2 (-0.8f, 0f);
 		cooldown = 0f;
-		health = 10;
+		health = SubmarineGame.maxHealth;
+		healthBarOffset = new Vector3(0f, transform.localScale.y * 1.5f, 0f);
+		gameover = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
-		
+		HealthBar.transform.position = transform.position + healthBarOffset;
 		healthUpdate ();
+		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
 
 		float move = Input.GetAxis ("VerticalAxis_2");
-		
-		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
+		if((move > 0 && transform.position.y < upperLimit) || (move < 0 && transform.position.y > lowerLimit)) {
+			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
+		}
+
 		Rotate ();
 
 		if(Input.GetKey (KeyCode.UpArrow)) {
@@ -81,11 +84,18 @@ public class MotionSub_R : MotionSubmarine {
 		rigidbody2D.rotation = -2f * rigidbody2D.velocity.y;
 	}
 
-	new void OnCollisionEnter2D (Collision2D c) {
+	void OnCollisionEnter2D (Collision2D c) {
 		Torpedo s = c.gameObject.GetComponent<Torpedo>();
 		health = health - s.getDamage ();
+		HealthBar.AddDamage ((int)s.getDamage ());
 		Destroy (c.gameObject);
-		
-		Debug.Log ("Blue's New Health is: " + health);
+	}
+
+	new void healthUpdate () {
+		if (health <= 0) {
+			gameover = true;
+			announcement.text = "Red sub wins...\nPress any key to\nstart a new game";
+			announcement.material.color = Color.black;
+		}
 	}
 }
