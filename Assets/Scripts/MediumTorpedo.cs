@@ -6,7 +6,7 @@ class MediumTorpedo : Torpedo {
 	public static readonly float mediumDamage = 0f;
 	public static readonly float mediumSpeed = 2f;
 	public static readonly float mediumBlastRadius = 0.5f;
-	public static readonly float mediumStun = 1f;
+	public static readonly float mediumStun = 2.25f;
 	public static readonly bool mediumInterceptor = false;
 	public static readonly int mediumType = SubmarineGame.MEDIUM_TORPEDO;
 	
@@ -22,6 +22,12 @@ class MediumTorpedo : Torpedo {
 	}
 
 	void Update () {
-		
+		if(transform.position.x > SubmarineGame.rightWall || transform.position.x < SubmarineGame.leftWall) {
+			detonate();
+		}
+	}
+
+	void detonate() {
+
 	}
 }

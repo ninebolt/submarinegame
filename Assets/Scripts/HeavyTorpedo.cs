@@ -22,6 +22,12 @@ class HeavyTorpedo : Torpedo {
 	}
 
 	void Update () {
+		if(transform.position.x > SubmarineGame.rightWall || transform.position.x < SubmarineGame.leftWall) {
+			detonate();
+		}
+	}
+
+	void detonate() {
 		
 	}
 }
