@@ -20,6 +20,12 @@ public class MotionSub_L : MotionSubmarine {
 	
 	// Update is called once per frame
 	void Update () {
+		if (gameover) {
+			if (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Joystick2Button0)) {
+				Application.LoadLevel (0);
+			}
+		}
+
 		HealthBar.transform.position = transform.position + healthBarOffset;
 
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
@@ -89,8 +95,8 @@ public class MotionSub_L : MotionSubmarine {
 
 	new void healthUpdate () {
 		if (health <= 0) {
-		gameover = true;
-			announcement.text = "Blue sub wins!\n\nPress enter to\nstart a new game";
+			gameover = true;
+			announcement.text = "Blue sub wins!\n\nPress A to\nreturn to the menu";
 			announcement.material.color = Color.black;
 		}
 	}
