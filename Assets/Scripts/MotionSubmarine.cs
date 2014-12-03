@@ -13,6 +13,7 @@ public class MotionSubmarine : MonoBehaviour {
 	public static readonly float lowerLimit = -2.75f;
 	public GUIText announcement;
 	public bool gameover;
+	public float hitstun;
 
 	// Use this for initialization
 	public void Start () {
@@ -42,11 +43,15 @@ public class MotionSubmarine : MonoBehaviour {
 	}
 
 	public void MoveUp() {
-		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, maxSpeed);
+		if(hitstun == 0f) {
+			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, maxSpeed);
+		}
 	}
 	
 	public void MoveDown() {
-		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -maxSpeed);
+		if(hitstun == 0f) {
+			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -maxSpeed);
+		}
 	}
 	
 	public void Stop() {

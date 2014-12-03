@@ -16,19 +16,22 @@ public class MotionSub_L : MotionSubmarine {
 		health = SubmarineGame.maxHealth;
 		healthBarOffset = new Vector3(0f, transform.localScale.y * 1.5f, 0f);
 		gameover = false;
+		hitstun = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		HealthBar.transform.position = transform.position + healthBarOffset;
-
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
-
 		healthUpdate ();
+		hitstun = Mathf.Max (0f, hitstun - Time.deltaTime);
 
 		float move = Input.GetAxis ("VerticalAxis_1");
-		
-		rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
+		if((move > 0 && transform.position.y < upperLimit) || (move < 0 && transform.position.y > lowerLimit)) {
+			if(hitstun == 0f) {
+				rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
+			}
+		}
 		Rotate ();
 
 		if(Input.GetKey (KeyCode.W)) {
@@ -43,7 +46,7 @@ public class MotionSub_L : MotionSubmarine {
 			Stop ();
 		}
 
-		if(cooldown == 0f) {	
+		if(cooldown == 0f && hitstun == 0f) {	
 			Vector3 rotation = transform.rotation.eulerAngles;
 			rotation = new Vector3(orientation.x,orientation.y,orientation.z+180);
 
@@ -84,6 +87,7 @@ public class MotionSub_L : MotionSubmarine {
 		Torpedo s = c.gameObject.GetComponent<Torpedo>();
 		health = health - s.getDamage ();
 		HealthBar.AddDamage ((int)s.getDamage ());
+		hitstun = s.stun;
 		Destroy (c.gameObject);
 	}
 
