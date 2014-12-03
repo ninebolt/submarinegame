@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Burst : MonoBehaviour {
-	public static readonly int lightTorpedoCap = 5;
-	public static readonly int mediumTorpedoCap = 3;
+	public static readonly int lightTorpedoCap = 10;
+	public static readonly int mediumTorpedoCap = 1;
 	public static readonly int heavyTorpedoCap = 1;
 
 	private float lightCharge;

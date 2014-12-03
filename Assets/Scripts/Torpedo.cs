@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Torpedo : MonoBehaviour {
+	//public GameObject submarineGame;
 	public float cooldown;
 	public float damage;
 	public float speed;
