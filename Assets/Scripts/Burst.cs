@@ -14,6 +14,8 @@ public class Burst : MonoBehaviour {
 	private int mediumTorpedoCharges;
 	private int heavyTorpedoCharges;
 
+	public GUIText torpedoStock, empStock, nukeStock;
+
 	// Use this for initialization
 	void Start () {
 		lightCharge = 0;
@@ -27,6 +29,8 @@ public class Burst : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		updateGUI ();
+
 		if(lightTorpedoCharges < lightTorpedoCap) {
 			lightCharge += Time.deltaTime * SubmarineGame.gameTempo;
 			if(lightCharge >= LightTorpedo.lightCooldown) {
@@ -122,5 +126,11 @@ public class Burst : MonoBehaviour {
 			heavyTorpedoCharges = 0;
 			return false;
 		}
+	}
+
+	private void updateGUI () {
+		torpedoStock.text = lightTorpedoCharges + " torpedoes";
+		empStock.text = mediumTorpedoCharges + " EMPs";
+		nukeStock.text = heavyTorpedoCharges + " Nukes";
 	}
 }
