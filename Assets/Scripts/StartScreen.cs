@@ -15,7 +15,9 @@ public class StartScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.JoystickButton0)) {
+		if (Input.GetKeyDown (KeyCode.JoystickButton0) 
+		    || Input.GetKeyDown (KeyCode.Return) 
+		    || Input.GetKeyDown (KeyCode.KeypadEnter)) {
 			if (selectedItem == 0) {
 				Application.LoadLevel(1);
 			}
