@@ -19,6 +19,7 @@ class LightTorpedo : Torpedo {
 		stun = lightStun;
 		interceptor = lightInterceptor;
 		type = lightType;
+		audio.Play ();
 	}
 
 	void Update () {

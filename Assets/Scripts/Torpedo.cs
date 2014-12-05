@@ -12,6 +12,7 @@ public class Torpedo : MonoBehaviour {
 	public int type;
 	public bool directionRight;
 	public GUIText healthGUI;
+	public GameObject sound;
 
 	// Use this for initialization
 	void Start () {
@@ -31,4 +32,7 @@ public class Torpedo : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
+	public void PlaySound() {
+		Instantiate (sound);
+	}
 }

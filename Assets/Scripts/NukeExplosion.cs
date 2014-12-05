@@ -10,6 +10,7 @@ public class NukeExplosion : Torpedo {
 	void Start () {
 		stun = heavyStun;
 		damage = heavyDamage;
+		type = SubmarineGame.HEAVY_TORPEDO;
 	}
 	
 	// Update is called once per frame

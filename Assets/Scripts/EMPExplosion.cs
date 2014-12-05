@@ -10,6 +10,7 @@ public class EMPExplosion : Torpedo {
 	void Start () {
 		stun = mediumStun;
 		damage = mediumDamage;
+		type = SubmarineGame.MEDIUM_TORPEDO;
 	}
 	
 	// Update is called once per frame

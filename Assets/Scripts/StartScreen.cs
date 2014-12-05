@@ -6,6 +6,7 @@ public class StartScreen : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameObject.Find ("playUnderline").renderer.enabled = true;
+
 	}
 	
 	// Update is called once per frame

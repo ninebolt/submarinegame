@@ -4,12 +4,12 @@ using System.Collections;
 public class MotionSub_L : MotionSubmarine {
 	public Burst burst;
 	private Vector2 offset;
-	new private float cooldown;
 	public Transform torpedo_L_Light;
 	public Transform torpedo_L_Medium;
 	public Transform torpedo_L_Heavy;
 	
 	new void Start () {
+		Time.timeScale = 1;
 		maxSpeed = 5f * SubmarineGame.gameTempo * SubmarineGame.subSpeed;
 		offset = new Vector2 (0.8f, 0f);
 		cooldown = 0f;
@@ -22,13 +22,16 @@ public class MotionSub_L : MotionSubmarine {
 	// Update is called once per frame
 	void Update () {
 		if (gameover) {
-			if (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Joystick2Button0)) {
+			if (Input.GetKeyDown (KeyCode.Joystick1Button7) || Input.GetKeyDown (KeyCode.Joystick2Button7)
+			    	|| Input.GetKeyDown(KeyCode.Return)) {
 				Application.LoadLevel (0);
 			}
 		}
 
 		HealthBar.transform.position = transform.position + healthBarOffset;
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
+		EMPCooldown = Mathf.Max (0f, EMPCooldown - Time.deltaTime);
+		NukeCooldown = Mathf.Max (0f, NukeCooldown - Time.deltaTime);
 		healthUpdate ();
 		hitstun = Mathf.Max (0f, hitstun - Time.deltaTime);
 
@@ -36,6 +39,9 @@ public class MotionSub_L : MotionSubmarine {
 		if((move > 0 && transform.position.y < upperLimit) || (move < 0 && transform.position.y > lowerLimit)) {
 			if(hitstun == 0f) {
 				rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, move * maxSpeed);
+			}
+			else {
+				rigidbody2D.velocity = new Vector2(0f, 0f);
 			}
 		}
 		Rotate ();
@@ -56,7 +62,7 @@ public class MotionSub_L : MotionSubmarine {
 			Vector3 rotation = transform.rotation.eulerAngles;
 			rotation = new Vector3(orientation.x,orientation.y,orientation.z+180);
 
-			if(Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Alpha1)) {
+			if(Input.GetKey (KeyCode.Joystick1Button0) || Input.GetKey (KeyCode.Alpha1)) {
 				if(burst.fireLight ()){
 					Transform torpedo = (Transform)Instantiate (torpedo_L_Light, ((Vector2)transform.position) 
 					                                            + offset, Quaternion.Euler (rotation));
@@ -64,11 +70,9 @@ public class MotionSub_L : MotionSubmarine {
 					torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
 						* new Vector2(LightTorpedo.lightSpeed, 0f);//rigidbody2D.velocity.y * 0.25f);
 				}
-				else{
-					Debug.Log (burst.getLightCharges ());
-				}
 			}
-			else if(Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.Alpha2)){
+			else if(Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.Alpha2)
+			        || Input.GetAxis ("RT_1") < -0.01f){
 				if(burst.fireMedium ()){
 					Transform torpedo = (Transform)Instantiate (torpedo_L_Medium, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
@@ -77,7 +81,8 @@ public class MotionSub_L : MotionSubmarine {
 						* new Vector2(MediumTorpedo.mediumSpeed, 0f);
 				}
 			}
-			else if(Input.GetKeyDown (KeyCode.Joystick1Button3) || Input.GetKeyDown (KeyCode.Alpha3)){
+			else if(Input.GetKeyDown (KeyCode.Joystick1Button3) || Input.GetKeyDown (KeyCode.Alpha3)
+			        || Input.GetAxis ("LT_1") < -0.01f){
 				if(burst.fireHeavy ()){
 					Transform torpedo = (Transform)Instantiate (torpedo_L_Heavy, ((Vector2)transform.position) 
 				                                            + offset, Quaternion.Euler (rotation));
@@ -87,14 +92,6 @@ public class MotionSub_L : MotionSubmarine {
 				}
 			}
 		}
-	}
-
-	void OnCollisionEnter2D (Collision2D c) {
-		Torpedo s = c.gameObject.GetComponent<Torpedo>();
-		health = health - s.getDamage ();
-		HealthBar.AddDamage ((int)s.getDamage ());
-		hitstun = s.stun;
-		Destroy (c.gameObject);
 	}
 
 	new void healthUpdate () {
