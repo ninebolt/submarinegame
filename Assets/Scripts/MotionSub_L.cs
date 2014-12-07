@@ -61,7 +61,6 @@ public class MotionSub_L : MotionSubmarine {
 		if(cooldown == 0f && hitstun == 0f) {	
 			Vector3 rotation = transform.rotation.eulerAngles;
 			rotation = new Vector3(orientation.x,orientation.y,orientation.z+180);
-			print (rigidbody2D.rotation);
 
 			if(Input.GetKey (KeyCode.Joystick1Button0) || Input.GetKey (KeyCode.Alpha1)) {
 				if(burst.fireLight ()){
@@ -92,6 +91,12 @@ public class MotionSub_L : MotionSubmarine {
 						* new Vector2(HeavyTorpedo.heavySpeed, 0f);
 				}
 			}
+		}
+
+		if (hitstun > 0) {
+			empParticle.enableEmission = true;
+		} else {
+			empParticle.enableEmission = false;
 		}
 	}
 

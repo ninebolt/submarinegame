@@ -19,6 +19,7 @@ public class MotionSubmarine : MonoBehaviour {
 	public bool gameover;
 	public float hitstun;
 	public readonly float torpedoSlide = 0.2f;
+	public ParticleSystem empParticle;
 
 	// Use this for initialization
 	public void Start () {
@@ -30,11 +31,13 @@ public class MotionSubmarine : MonoBehaviour {
 		NukeCooldown = 0f;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
 		EMPCooldown = Mathf.Max (0f, EMPCooldown - Time.deltaTime);
 		NukeCooldown = Mathf.Max (0f, NukeCooldown - Time.deltaTime);
+
+
+
 	}
 
 	void LateUpdate() {
@@ -85,6 +88,7 @@ public class MotionSubmarine : MonoBehaviour {
 				takeDamage (s);
 				EMPCooldown = EMPCooldownTime;
 				s.PlaySound ();
+				rigidbody2D.velocity = new Vector2(0f, 0f);
 			}
 			break;
 		case 2:

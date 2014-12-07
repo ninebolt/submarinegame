@@ -58,7 +58,6 @@ public class MotionSub_R : MotionSubmarine {
 		else if(move == 0) {
 			Stop ();
 		}
-		print (Input.GetAxis ("RT_2"));
 		
 		if(cooldown == 0f && hitstun == 0f) {
 			Vector3 rotation = transform.rotation.eulerAngles;
@@ -93,6 +92,12 @@ public class MotionSub_R : MotionSubmarine {
 						* new Vector2(-HeavyTorpedo.heavySpeed, 0f);
 				}
 			}
+		}
+
+		if (hitstun > 0) {
+			empParticle.enableEmission = true;
+		} else {
+			empParticle.enableEmission = false;
 		}
 	}
 

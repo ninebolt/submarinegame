@@ -4,13 +4,15 @@ using System.Collections;
 public class EMPExplosion : Torpedo {
 	public static readonly float mediumDamage = 0f;
 	public static readonly float mediumStun = 2.25f;
-	private float lifeTime = 2f;
+	public static readonly float lifetime = 2f;
+	private float lifeTime;
 
 	// Use this for initialization
 	void Start () {
 		stun = mediumStun;
 		damage = mediumDamage;
 		type = SubmarineGame.MEDIUM_TORPEDO;
+		lifeTime = lifetime;
 	}
 	
 	// Update is called once per frame
