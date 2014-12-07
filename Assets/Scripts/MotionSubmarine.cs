@@ -14,7 +14,7 @@ public class MotionSubmarine : MonoBehaviour {
 	public float health;
 	public Vector3 healthBarOffset;
 	public static readonly float upperLimit = 2.3f;
-	public static readonly float lowerLimit = -2.75f;
+	public static readonly float lowerLimit = -2.0f;
 	public GUIText announcement;
 	public bool gameover;
 	public float hitstun;
