@@ -67,10 +67,10 @@ public class MotionSub_R : MotionSubmarine {
 			if(Input.GetKey (KeyCode.Joystick2Button0) || Input.GetKey (KeyCode.Alpha7)){
 				if(burst.fireLight ()){
 					Transform torpedo = (Transform)Instantiate (torpedo_R_Light, ((Vector2)transform.position) 
-				                                            + offset, Quaternion.Euler (rotation));
+							+ offset, Quaternion.Euler (new Vector3(orientation.x,orientation.y,rigidbody2D.rotation)));
 					cooldown += SubmarineGame.allTorpedoCooldown;
 					torpedo.rigidbody2D.velocity = SubmarineGame.torpedoSpeed * SubmarineGame.gameTempo
-						* new Vector2(-LightTorpedo.lightSpeed, 0f);//rigidbody2D.velocity.y * 0.25f);
+						* new Vector2(-LightTorpedo.lightSpeed, rigidbody2D.velocity.y * torpedoSlide);
 				}
 			}
 			else if(Input.GetKeyDown (KeyCode.Joystick2Button1) || Input.GetKeyDown ( KeyCode.Alpha8)

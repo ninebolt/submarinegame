@@ -18,6 +18,7 @@ public class MotionSubmarine : MonoBehaviour {
 	public GUIText announcement;
 	public bool gameover;
 	public float hitstun;
+	public readonly float torpedoSlide = 0.2f;
 
 	// Use this for initialization
 	public void Start () {

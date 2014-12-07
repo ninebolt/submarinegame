@@ -35,4 +35,8 @@ public class Torpedo : MonoBehaviour {
 	public void PlaySound() {
 		Instantiate (sound);
 	}
+
+	private void OnApplicationQuit() {
+		Destroy (gameObject);
+	}
 }
