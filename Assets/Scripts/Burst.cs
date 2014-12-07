@@ -14,7 +14,7 @@ public class Burst : MonoBehaviour {
 	private float mediumCharge;
 	private float heavyCharge;
 
-	public GUIText torpedoStock, empStock, nukeStock;
+	public GameObject empStock, nukeStock;
 
 	// Use this for initialization
 	void Start () {
@@ -129,8 +129,16 @@ public class Burst : MonoBehaviour {
 	}
 
 	private void updateGUI () {
-		torpedoStock.text = lightTorpedoCharges + " torpedoes";
-		empStock.text = mediumTorpedoCharges + " EMPs";
-		nukeStock.text = heavyTorpedoCharges + " Nukes";
+		if (mediumTorpedoCharges > 0) {
+			empStock.renderer.enabled = true;
+		} else {
+			empStock.renderer.enabled = false;
+		}
+
+		if (heavyTorpedoCharges > 0) {
+			nukeStock.renderer.enabled = true;
+		} else {
+			nukeStock.renderer.enabled = false;
+		}
 	}
 }
