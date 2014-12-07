@@ -103,8 +103,8 @@ public class MotionSub_L : MotionSubmarine {
 	new void healthUpdate () {
 		if (health <= 0) {
 			gameover = true;
-			announcement.text = "Blue sub wins!\n\nPress A to\nreturn to the menu";
-			announcement.material.color = Color.black;
+			announcement.text = "Blue sub wins!\n\nPress Start to\nreturn to the menu";
+			announcement.material.color = Color.white;
 		}
 	}
 }

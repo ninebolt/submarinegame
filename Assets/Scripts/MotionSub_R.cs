@@ -22,9 +22,8 @@ public class MotionSub_R : MotionSubmarine {
 	// Update is called once per frame
 	void Update () {
 		if (gameover) {
-			if (Input.GetKeyDown (KeyCode.Joystick1Button0) 
-			    || Input.GetKeyDown (KeyCode.Joystick2Button0)
-			    || Input.GetKeyDown (KeyCode.A)) {
+			if (Input.GetKeyDown (KeyCode.Joystick1Button7) || Input.GetKeyDown (KeyCode.Joystick2Button7)
+			    || Input.GetKeyDown(KeyCode.Return)) {
 				Application.LoadLevel (0);
 			}
 		}
@@ -108,8 +107,8 @@ public class MotionSub_R : MotionSubmarine {
 	new void healthUpdate () {
 		if (health <= 0) {
 			gameover = true;
-			announcement.text = "Red sub wins...\n\nPress A to\nreturn to the menu";
-			announcement.material.color = Color.black;
+			announcement.text = "Red sub wins...\n\nPress Start to\nreturn to the menu";
+			announcement.material.color = Color.white;
 		}
 	}
 }

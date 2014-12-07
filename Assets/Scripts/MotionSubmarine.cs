@@ -35,9 +35,6 @@ public class MotionSubmarine : MonoBehaviour {
 		cooldown = Mathf.Max (0f, cooldown - Time.deltaTime);
 		EMPCooldown = Mathf.Max (0f, EMPCooldown - Time.deltaTime);
 		NukeCooldown = Mathf.Max (0f, NukeCooldown - Time.deltaTime);
-
-
-
 	}
 
 	void LateUpdate() {

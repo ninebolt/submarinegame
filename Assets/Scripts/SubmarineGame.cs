@@ -24,14 +24,6 @@ public class SubmarineGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.KeypadEnter)){
-			if(motionSub_R.gameover || motionSub_L.gameover){
-				restart ();
-			}
-		}
-	}
-
-	public void restart() {
 
 	}
 }
